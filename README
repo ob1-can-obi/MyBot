@@ -1,0 +1,73 @@
+WARNING: THIS IS A PROTOTYPE AND IS STILL UNDER DEVELOPMENT. The UI is ADK's.
+    UPCOMMING:
+        -PUSHING INTO VERTEX AI
+        -ADDING A MECHANISM TO LIMIT RESOURCES IN THE CLOUD - CURRENTLY USING PERSISTENT CONTAINER.
+        -WILL FURTHER ADD EXTRA AGENTS FOR BETTER FUNCTIONALITY - v2 update.
+        
+# Jishnu's Personal Chatbot
+
+A personal AI assistant that can answer questions about Jishnu Vivaswanth Raviprolu using his resume data stored in MongoDB.
+
+## What it can tell you about:
+- Education & Academic Background
+- Professional Work Experience  
+- Technical Projects
+- Teaching & Research Experience
+- Volunteer Work
+
+## How to use:
+
+### Prerequisites:
+- Docker installed and running
+- Google Cloud CLI configured
+- Python environment with required packages
+
+### Quick Start:
+1. Install requirements:
+   ```bash
+   pip install -r requirements.txt
+   ```
+!!!!!!!!! VERY IMPORTANT:  If the .env file is not present in the \chatbot directory, create one and ask the owner for the APIs. !!!!!!!!!!!!
+
+2. Navigate to MYBOT(root) directory and start with the startup script:
+   ```bash
+   python start_agent.py
+   ```
+
+3. The startup script will automatically:
+   - Check if MongoDB MCP container is running
+   - Create/start the container if needed
+   - Launch the ADK web interface
+
+4. Open `http://localhost:8000` and start with "Hello"
+
+5. Don't forget to stop the containers once finished.
+```bash
+docker rm -f mongodb-mcp-persistent
+```
+
+6. Once you run the start_agent.py, you don't need to rerun it if it closes. Just run -  
+```bash
+adk web
+```
+
+### Alternative (manual):
+If you prefer to manage the container separately:
+```bash
+cd MYBOT
+adk web  # Make sure MongoDB container is running first
+```
+
+## Technical Details:
+- Uses Google ADK (Agent Development Kit)
+- MongoDB Atlas database via MCP (Model Context Protocol)
+- Docker container for MCP server management
+- Gemini 2.0 Flash model
+
+## Notes:
+- First run may take a moment to pull Docker image
+- Container is automatically managed by the startup script
+- All data queries go through MongoDB (no built-in knowledge used)
+
+---
+**Issues?** Contact Jishnu at: jishnu.raviprolu@gmail.com

@@ -1,0 +1,5 @@
+google-adk
+google-genai
+google-cloud-aiplatform[adk,agent_engines]
+pydantic>=2.7.2,<3.0.0
+
