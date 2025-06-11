@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
 """
-Simple startup script for Jishnu's chatbot.
 This ensures MongoDB container is running before starting the agent.
 """
 
@@ -8,8 +6,6 @@ import subprocess
 import sys
 import time
 import os
-
-# Get MongoDB connection string from environment
 
 
 def ensure_mongodb_container():
