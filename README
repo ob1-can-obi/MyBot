@@ -27,7 +27,8 @@ A personal AI assistant that can answer questions about Jishnu Vivaswanth Ravipr
    ```bash
    pip install -r requirements.txt
    ```
-!!!!!!!!! VERY IMPORTANT:  If the .env file is not present in the \chatbot directory, create one and ask the owner for the APIs. !!!!!!!!!!!!
+!!!!!!!!! VERY IMPORTANT:  If the .env file is not present in the \chatbot directory, create one and ask the owner for the APIs. Also, add the MongoDB Connection URL in 
+start_agent.py !!!!!!!!!!!!
 
 2. Navigate to MYBOT(root) directory and start with the startup script:
    ```bash
